@@ -1,9 +1,12 @@
 import time
 
 from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.options import Options
 
 # 公开市场业务交易公告
-driver = Chrome(executable_path='../chromedriver.exe')
+options = Options()
+options.add_argument('--headless')
+driver = Chrome(executable_path='../chromedriver.exe', options=options)
 
 try:
     driver.get('http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/index.html')
